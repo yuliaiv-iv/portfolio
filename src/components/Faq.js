@@ -8,7 +8,7 @@ import { AnimateSharedLayout } from 'framer-motion';
 function Faq() {
   return (
     <FaqLayout>
-      <h2>Any Questions <span>FAQ</span></h2>
+      <h2>Обо мне</h2>
       <AnimateSharedLayout>
         {info.map((i) =>
           <Toggle title={i.title}>

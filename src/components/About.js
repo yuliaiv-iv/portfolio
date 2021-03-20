@@ -1,5 +1,5 @@
 import React from 'react';
-import about from '../img/home1.png';
+import about from '../img/home2.png';
 import Wave from './Wave';
 import styled from 'styled-components';
 import { Layout, Discription, Image, TextConteiner } from '../styles';
@@ -13,17 +13,17 @@ function About() {
       <Discription>
         <motion.div>
           <TextConteiner>
-            <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
+            <motion.h2 variants={titleAnimation}>Иванова Юлия</motion.h2>
           </TextConteiner>
           <TextConteiner>
-            <motion.h2 variants={titleAnimation}>your <span>dream</span> come</motion.h2>
+            <motion.h2 variants={titleAnimation}>Junior <span>web</span> developer</motion.h2>
           </TextConteiner>
-          <TextConteiner>
+          {/* <TextConteiner>
             <motion.h2 variants={titleAnimation}>true</motion.h2>
-          </TextConteiner>
+          </TextConteiner> */}
         </motion.div>
-        <motion.p variants={fade}>Contact us for any photography or videopraphy ideas that you have. We have professionals with amazings kills.</motion.p>
-        <motion.button variants={fade}>Contact Us</motion.button>
+        <motion.p variants={fade}>Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser</motion.p>
+        <motion.button variants={fade}>Резюме</motion.button>
       </Discription>
       <Image>
         <motion.img variants={imageAnimation} src={about} alt='about' />

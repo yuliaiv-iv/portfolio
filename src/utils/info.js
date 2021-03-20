@@ -1,18 +1,47 @@
+import { FaceBook } from '../components/icons/FaceBook';
+import { GitHub } from '../components/icons/GitHub';
+import { Email } from '../components/icons/Email';
+import { Phone } from '../components/icons/Phone';
+import { Telegram } from '../components/icons/Telegram';
+
 export const info = [
-    {
-      title: '1How Do I Start?',
-      discription: '1Loren ipsum dorot sit amet. Loren ipsum dorot sit amet. Loren ipsum dorot sit amet ren ipsum dorot sit amet.',
-    },
-    {
-      title: '2How Do I Start?',
-      discription: '2Loren ipsum dorot sit amet. Loren ipsum dorot sit amet. Loren ipsum dorot sit amet ren ipsum dorot sit amet.',
-    },
-    {
-      title: '3How Do I Start?',
-      discription: '3Loren ipsum dorot sit amet. Loren ipsum dorot sit amet. Loren ipsum dorot sit amet ren ipsum dorot sit amet.',
-    },
-    {
-      title: '4How Do I Start?',
-      discription: '4Loren ipsum dorot sit amet. Loren ipsum dorot sit amet. Loren ipsum dorot sit amet ren ipsum dorot sit amet.',
-    },
-  ];
+  {
+    title: 'Почему веб разработка?',
+    discription: 'Обучение по направлению веб-разработка, курса от Яндекс Практикум. Во время обучения создала несколько приложений. Участвовала в хакатоне по созданию веб приложения для детского книжного магазина «Маршак»',
+  },
+  {
+    title: 'Опыт работы',
+    discription: 'Обучение по направлению веб-разработка, курса от Яндекс Практикум. Во время обучения создала несколько приложений. Участвовала в хакатоне по созданию веб приложения для детского книжного магазина «Маршак»',
+  },
+  {
+    title: 'Образование',
+    discription: 'Обучение по направлению веб-разработка, курса от Яндекс Практикум. Во время обучения создала несколько приложений. Участвовала в хакатоне по созданию веб приложения для детского книжного магазина «Маршак»',
+  },
+  {
+    title: 'Интересы и Хобби',
+    discription: 'Обучение по направлению веб-разработка, курса от Яндекс Практикум. Во время обучения создала несколько приложений. Участвовала в хакатоне по созданию веб приложения для детского книжного магазина «Маршак»',
+  },
+];
+
+export const contacts = [
+  {
+    icon: <Phone />,
+    text: 'Обучение по направлению',
+  },
+  {
+    icon: <Telegram />,
+    text: 'Обучение по',
+  },
+  {
+    icon: <Email />,
+    text: 'Обучение по напр',
+  },
+  {
+    icon: <GitHub />,
+    text: 'Обучение по направлению',
+  },
+  {
+    icon: <FaceBook />,
+    text: 'Обучение по направлению направлению',
+  },
+];

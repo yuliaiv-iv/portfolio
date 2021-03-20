@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { pageAnimation, titleAnimation } from '../animation';
 
+import { contacts } from '../utils/info';
+import { lineAnimation } from '../animation';
+
 const Contact = () => {
   return (
     <ContactStyle
@@ -15,29 +18,19 @@ const Contact = () => {
     >
       <Title>
         <Hide>
-          <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
+          <motion.h2 variants={titleAnimation}>Контакты</motion.h2>
         </Hide>
-        <div className="line2"></div>
       </Title>
+      <motion.div variants={lineAnimation} className='line'></motion.div>
       <div>
-        <Hide>
+        {contacts.map((c) =>
+        <Hide key={c.text}>
           <Social variants={titleAnimation}>
-            <Circle />
-            <h2>Socials</h2>
+            <div>{c.icon}</div>
+            <h2>{c.text}</h2>
           </Social>
         </Hide>
-        <Hide>
-          <Social variants={titleAnimation}>
-            <Circle />
-            <h2>Send us a message</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titleAnimation}>
-            <Circle />
-            <h2>Drop an email.</h2>
-          </Social>
-        </Hide>
+        )}
       </div>
     </ContactStyle>
   );
@@ -51,23 +44,29 @@ const ContactStyle = styled(motion.div)`
   padding: 5rem 10rem;
   color: #353535;
   min-height: 90vh;
+  .line {
+    height: 0.5rem;
+    background: #23d997;
+    margin-bottom: 3rem;
+  }
 `;
 const Title = styled.div`
   margin-bottom: 4rem;
   color: black;
 `;
-const Circle = styled.div`
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-  background: #353535;
-`;
-
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;
   h2 {
-    margin: 2rem;
+    margin: 1rem;
+    font-size: 2rem;
+  }
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+  path {
+    fill: #353535;
   }
 `;
 

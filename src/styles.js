@@ -33,3 +33,12 @@ export const Image = styled.div`
 export const TextConteiner = styled.div`
   overflow: hidden;
 `;
+
+// export const Footerq = styled.footer`
+//   min-height: 8vh;
+//   padding: 1rem 10rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   background: #282828;
+// `;

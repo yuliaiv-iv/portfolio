@@ -8,17 +8,17 @@ function NavBar() {
   return (
     <Nav>
       <h1>
-        <Link className='logo' to='/'>Logo</Link>
+        <Link className='logo' to='/'>Portfolio</Link>
       </h1>
       <ul>
         <li>
-          <NavLink exact to='/' activeClassName='active'>1. About us</NavLink>
+          <NavLink exact to='/' activeClassName='active'>Обо мне</NavLink>
         </li>
         <li>
-          <NavLink exact to='/work' activeClassName='active'>2. Our Work</NavLink>
+          <NavLink exact to='/work' activeClassName='active'>Мои Проекты</NavLink>
         </li>
         <li>
-          <NavLink exact to='/contact' activeClassName='active'>1. Contact Us</NavLink>
+          <NavLink exact to='/contact' activeClassName='active'>Контакты</NavLink>
         </li>
       </ul>
     </Nav>

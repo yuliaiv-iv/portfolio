@@ -6,6 +6,7 @@ import ScrollTop from '../components/ScrollTop';
 
 import { motion } from 'framer-motion';
 import { pageAnimation } from '../animation';
+import Footer from '../components/Footer';
 
 function AboutUs() {
   return (
@@ -19,6 +20,7 @@ function AboutUs() {
       <About />
       <Services />
       <Faq />
+      <Footer />
     </motion.div>
   );
 }
