@@ -12,7 +12,7 @@ function Services() {
         <img src={home2} />
       </Image>
       <ServicesSection>
-        <h2>Ключевые <span>навыки</span></h2>
+        <h2><span>Stack </span>и ключевые навыки</h2>
         <CardsConteiner>
           {stack.map((s) =>
             <Card key={s.title}>
@@ -23,7 +23,7 @@ function Services() {
             </Card>
           )}
         </CardsConteiner>
-        <p>Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser</p>
+        {/* <p></p> */}
       </ServicesSection>
     </ServicesLayout>
   );
@@ -31,11 +31,11 @@ function Services() {
 
 const ServicesLayout = styled(Layout)`
   h2 {
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
   }
   p {
     width: 100%;
-    padding: 4rem 0rem 4rem 0rem;
+    padding: 0rem;
   }
   span {
     color: #D96ED4;
@@ -43,23 +43,24 @@ const ServicesLayout = styled(Layout)`
 `;
 
 const ServicesSection = styled(Discription)`
-  padding-left: 5rem;
+  padding-left: 4rem;
   padding-right: 0;
+  @media screen and (max-width: 1090px) {
+    padding-left: 3rem;
+  }
 `;
 
 const CardsConteiner = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
 `;
 const Card = styled.div`
-  flex-basis: 20rem;
   .icon {
     display: flex;
     align-items: center;
     h3 {
       margin-left: 1rem;
-      /* background: white;
-      color: black; */
       padding: 1rem;
     }
   }

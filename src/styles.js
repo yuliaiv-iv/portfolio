@@ -2,43 +2,35 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Layout = styled(motion.div)`
-  min-height: 90vh;
+  min-height: 80vh;
+  max-width: 1440px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 10rem;
+  padding: 7rem 5rem;
   color: white;
+  @media screen and (max-width: 1090px) {
+    padding: 3rem 2rem;
+  }
 `;
 
 export const Discription = styled.div`
   flex: 1;
-  padding-right: 5rem;
+  min-width: 500px;
+  padding-right: 4rem;
   z-index: 2;
-  h2 {
-    font-weight: lighter;
-  }
 `;
 
 export const Image = styled.div`
-  flex: 1;
   overflow: hidden;
   z-index: 2;
   img {
     width: 100%;
-    height: 80vh;
     object-fit: cover;
   }
 `;
 
-export const TextConteiner = styled.div`
+export const Text = styled.div`
   overflow: hidden;
 `;
-
-// export const Footerq = styled.footer`
-//   min-height: 8vh;
-//   padding: 1rem 10rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   background: #282828;
-// `;

@@ -10,18 +10,20 @@ import Footer from '../components/Footer';
 
 function AboutUs() {
   return (
-    <motion.div
-      exit='exit'
-      variants={pageAnimation}
-      initial='hidden'
-      animate='show'
-    >
-      <ScrollTop />
-      <About />
-      <Services />
-      <Faq />
-      <Footer />
-    </motion.div>
+    <>
+      <motion.div
+        exit='exit'
+        variants={pageAnimation}
+        initial='hidden'
+        animate='show'
+      >
+        <ScrollTop />
+        <About />
+        <Services />
+        <Faq />
+      </motion.div>
+      <Footer theme='#1b1b1b' />
+    </>
   );
 }
 

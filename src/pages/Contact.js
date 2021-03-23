@@ -2,37 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 //Animation
 import { motion } from 'framer-motion';
-import { pageAnimation, titleAnimation } from '../animation';
-
+import { pageAnimation, titleAnimation, lineAnimation } from '../animation';
 import { contacts } from '../utils/info';
-import { lineAnimation } from '../animation';
 
 const Contact = () => {
   return (
-    <ContactStyle
+    <ContactLayout
       style={{ background: '#fff' }}
       variants={pageAnimation}
       exit="exit"
       initial="hidden"
       animate="show"
     >
-      <Title>
-        <Hide>
-          <motion.h2 variants={titleAnimation}>Контакты</motion.h2>
-        </Hide>
-      </Title>
-      <motion.div variants={lineAnimation} className='line'></motion.div>
-      <div>
-        {contacts.map((c) =>
-        <Hide key={c.text}>
-          <Social variants={titleAnimation}>
-            <div>{c.icon}</div>
-            <h2>{c.text}</h2>
-          </Social>
-        </Hide>
-        )}
-      </div>
-    </ContactStyle>
+      <Container>
+        <Title>
+          <Hide>
+            <motion.h2 variants={titleAnimation}>Контакты</motion.h2>
+          </Hide>
+        </Title>
+        <motion.div variants={lineAnimation} className='line'></motion.div>
+        <div>
+          {contacts.map((c) =>
+            <Hide key={c.text}>
+              <Social variants={titleAnimation}>
+                <a href='mailto:yulia.ivanova6@gmail.com'>
+                  <div>{c.icon}</div>
+                </a>
+                <h4>{c.text}</h4>
+              </Social>
+            </Hide>
+          )}
+        </div>
+      </Container>
+    </ContactLayout>
   );
 };
 
@@ -40,26 +42,37 @@ const Hide = styled.div`
   overflow: hidden;
 `;
 
-const ContactStyle = styled(motion.div)`
-  padding: 5rem 10rem;
-  color: #353535;
-  min-height: 90vh;
+const ContactLayout = styled(motion.div)`
+    color: #353535;
+    min-height: 100vh;
   .line {
     height: 0.5rem;
     background: #23d997;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 `;
+const Container = styled.div`
+  max-width: 1440px;
+  margin: auto;
+  padding: 3rem 5rem;
+  @media screen and (max-width: 1090px) {
+    padding: 2rem;
+  }
+`;
+
 const Title = styled.div`
-  margin-bottom: 4rem;
+  padding: 2rem 0rem;
   color: black;
+  @media screen and (max-width: 1090px) {
+    padding: 1rem 0rem;
+  }
 `;
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;
-  h2 {
+  h4 {
     margin: 1rem;
-    font-size: 2rem;
+    font-weight: normal;
   }
   svg {
     width: 40px;

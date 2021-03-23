@@ -35,6 +35,7 @@ export const contacts = [
   {
     icon: <Email />,
     text: 'Обучение по напр',
+    href: 'yulia.ivanova6@gmail.com',
   },
   {
     icon: <GitHub />,

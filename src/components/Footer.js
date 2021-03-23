@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../styles';
 import { GitHub } from './icons/GitHub';
 import { FaceBook } from './icons/FaceBook';
-import { Footerq } from '../styles';
 
 
-function Footer() {
+function Footer({theme}) {
   return (
-    <FooterLayout>
+    <FooterLayout style={{ background: `${theme}` }}>
       <p>&copy; 2021 Yulia Ivanova</p>
       <div>
         <a href='https://github.com/yuliaiv-iv'><GitHub /></a>
@@ -20,13 +18,15 @@ function Footer() {
 
 const FooterLayout = styled.footer`
   min-height: 8vh;
-  padding: 1rem 10rem;
+  max-width: 1440px;
+  margin: auto;
+  padding: 1rem 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   p {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 18px;
     color: #545454;
     padding: 0;
   }
@@ -42,6 +42,16 @@ const FooterLayout = styled.footer`
     display: flex;
     width: 100px;
     justify-content: space-between;
+  }
+  @media screen and (max-width: 1090px) {
+    padding: 0rem 2rem;
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+    div {
+      width: 70px;
+    }
   }
 `;
 

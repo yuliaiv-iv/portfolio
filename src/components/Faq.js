@@ -30,18 +30,21 @@ const FaqLayout = styled(Layout)`
   }
   h2 {
     font-weight: lighter;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
+  }
+  h4 {
+    font-weight: normal;
   }
   .line {
     background: #cccccc;
     height: 0.2rem;
-    margin: 2rem 0rem;
+    margin: 0.8rem 0rem;
     width: 100%;
   }
   .answer {
-    padding: 2rem 0rem;
+    /* padding: 2rem 0rem; */
     p {
-      padding: 1rem 0rem;
+      padding: 2rem 0rem;
     }
   }
 `;
