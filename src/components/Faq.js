@@ -23,6 +23,7 @@ function Faq() {
 }
 
 const FaqLayout = styled(Layout)`
+  margin-top: 0;
   display: block;
   span {
     display: block;
@@ -41,10 +42,9 @@ const FaqLayout = styled(Layout)`
     margin: 0.8rem 0rem;
     width: 100%;
   }
-  .answer {
-    /* padding: 2rem 0rem; */
-    p {
-      padding: 2rem 0rem;
+  @media screen and (max-width: 1090px) {
+    h4 {
+      padding: 1rem 0rem;
     }
   }
 `;

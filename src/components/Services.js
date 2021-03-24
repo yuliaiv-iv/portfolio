@@ -8,11 +8,8 @@ import { stack } from '../utils/stack';
 function Services() {
   return (
     <ServicesLayout>
-      <Image>
-        <img src={home2} />
-      </Image>
-      <ServicesSection>
-        <h2><span>Stack </span>и ключевые навыки</h2>
+      <Discription>
+        <h2><span>Stack </span>и навыки</h2>
         <CardsConteiner>
           {stack.map((s) =>
             <Card key={s.title}>
@@ -24,14 +21,18 @@ function Services() {
           )}
         </CardsConteiner>
         {/* <p></p> */}
-      </ServicesSection>
+      </Discription>
+      <Image>
+        <img src={home2} />
+      </Image>
     </ServicesLayout>
   );
 }
 
 const ServicesLayout = styled(Layout)`
+  margin-top: 0;
   h2 {
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
   }
   p {
     width: 100%;
@@ -39,14 +40,6 @@ const ServicesLayout = styled(Layout)`
   }
   span {
     color: #D96ED4;
-  }
-`;
-
-const ServicesSection = styled(Discription)`
-  padding-left: 4rem;
-  padding-right: 0;
-  @media screen and (max-width: 1090px) {
-    padding-left: 3rem;
   }
 `;
 
@@ -62,6 +55,16 @@ const Card = styled.div`
     h3 {
       margin-left: 1rem;
       padding: 1rem;
+      max-width: 140px;
+    }
+    @media screen and (max-width: 1090px) {
+      h3 {
+        font-size: 1rem;
+        padding: 0.6rem;
+      }
+      img {
+        width: 35px;
+      }
     }
   }
 `;

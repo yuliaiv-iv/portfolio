@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
         color: white;
     }
     p {
-        padding: 3rem 0rem;
+        padding: 2rem 0rem;
         color: #cccccc;
         font-size: 1.4rem;
         line-height: 150%;
@@ -49,17 +49,26 @@ const GlobalStyle = createGlobalStyle`
     }
     a {
         text-decoration: none;
+        font-size: 1.1rem;
     }
     @media screen and (max-width: 1090px) {
         h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
         }
         p {
-            padding: 2rem 0rem;
             font-size: 1.1rem;
+            padding: 1.5rem 0rem;
         }
         h4 {
             font-size: 1.3rem;
+        }
+        a {
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        button {
+            font-size: 1.1rem;
+            padding: 0.6rem 1rem;
         }
     }
 `;

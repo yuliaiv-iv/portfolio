@@ -30,12 +30,12 @@ function OurWork() {
         style={{ background: '#fff' }}
       >
         <ScrollTop />
-        <Movie ref={element3}>
+        <Movie>
           <motion.h2 variants={fade}>athlete</motion.h2>
           <motion.div variants={lineAnimation} className='line'></motion.div>
           <Link to='/work/the-athlete'>
             <Hide>
-              <motion.img variants={imageAnimation} initial='show' src={athelete} alt='something' />
+              <img src={athelete} alt='something' />
             </Hide>
           </Link>
         </Movie>
@@ -44,7 +44,7 @@ function OurWork() {
           <div className='line'></div>
           <Link to='/work/good-times'>
             <Hide>
-              <motion.img variants={imageAnimation} animate={controls} src={theracer} alt='something' />
+              <img variants={imageAnimation} animate={controls} src={theracer} alt='something' />
             </Hide>
           </Link>
         </Movie>
@@ -53,7 +53,7 @@ function OurWork() {
           <div className='line'></div>
           <Link to='/work/the-racer'>
             <Hide>
-              <motion.img variants={imageAnimation} animate={controls2} src={goodtimes} alt='something' />
+              <img variants={imageAnimation} animate={controls2} src={goodtimes} alt='something' />
             </Hide>
           </Link>
         </Movie>
@@ -65,6 +65,7 @@ function OurWork() {
 
 const Section = styled.section`
   background: rgb(255, 255, 255);
+  margin-top: 80px;
 `;
 
 const Work = styled(motion.div)`
@@ -76,6 +77,12 @@ const Work = styled(motion.div)`
   h2 {
     padding: 1rem 0rem;
   }
+  img {
+    transition: transform .5s ease-in-out;
+    &:hover {
+      transform: scale(1.10);
+    }
+  }
   @media screen and (max-width: 1090px) {
     padding: 0rem 2rem;
   }
@@ -83,9 +90,6 @@ const Work = styled(motion.div)`
 
 const Movie = styled.div`
   padding-bottom: 4rem;
-  @media screen and (max-width: 1090px) {
-    padding-bottom: 2rem;
-  }
   .line {
     height: 0.5rem;
     background: #23d997;
@@ -95,6 +99,12 @@ const Movie = styled.div`
     width: 100%;
     height: 70vh;
     object-fit: cover;
+  }
+  @media screen and (max-width: 1090px) {
+    padding-bottom: 2rem;
+  }
+  .line {
+    margin-bottom: 2rem;
   }
 `;
 const Hide = styled.div`

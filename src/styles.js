@@ -2,29 +2,31 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Layout = styled(motion.div)`
-  min-height: 80vh;
   max-width: 1440px;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 50px;
+  grid-template-columns: repeat(auto-fit,minmax(400px,720px) minmax(270px,500px));
   padding: 7rem 5rem;
+  margin-top: 80px;
   color: white;
   @media screen and (max-width: 1090px) {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
+    grid-column-gap: 30px
   }
 `;
 
 export const Discription = styled.div`
   flex: 1;
-  min-width: 500px;
-  padding-right: 4rem;
   z-index: 2;
+  align-self: center;
 `;
 
 export const Image = styled.div`
   overflow: hidden;
   z-index: 2;
+  align-self: center;
   img {
     width: 100%;
     object-fit: cover;

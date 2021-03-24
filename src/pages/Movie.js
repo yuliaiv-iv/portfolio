@@ -20,19 +20,19 @@ function Movie() {
   }, [url]);
 
   return (
-    <Section>
-    <ScrollTop />
+    <Section
+      exit='exit'
+      variants={pageAnimation}
+      initial='hidden'
+      animate='show'
+      style={{ background: '#fff' }}
+    >
+      <ScrollTop />
       {project && (
-        <div
-          exit='exit'
-          variants={pageAnimation}
-          initial='hidden'
-          animate='show'
-        >
+        <div>
           <HeadLine>
             <h2>{project.title}</h2>
             <img src={project.mainImg} alt='' />
-            {/* <img src={movie.mainImg} alt='' /> */}
           </HeadLine>
           <ProjectList>
             {project.awards.map((award, index) =>
@@ -45,14 +45,14 @@ function Movie() {
           </ProjectList>
         </div>
       )}
-      <Footer theme='#ffffff'/>
+      <Footer theme='#ffffff' />
     </Section>
   );
 }
 
 const Section = styled(motion.div)`
-  color: #000000;
   background: rgb(255, 255, 255);
+  margin-top: 80px;
 `;
 
 const HeadLine = styled.div`
@@ -66,6 +66,11 @@ const HeadLine = styled.div`
   }
   h2 {
     padding: 2rem;
+  }
+  @media screen and (max-width: 1090px) {
+    h2 {
+      padding: 1rem;
+    }
   }
 `;
 
