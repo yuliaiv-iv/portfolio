@@ -9,7 +9,7 @@ export const Layout = styled(motion.div)`
   grid-column-gap: 50px;
   grid-template-columns: repeat(auto-fit,minmax(400px,720px) minmax(270px,500px));
   padding: 7rem 5rem;
-  margin-top: 80px;
+  margin-top: 60px;
   color: white;
   @media screen and (max-width: 1090px) {
     padding: 4rem 2rem;

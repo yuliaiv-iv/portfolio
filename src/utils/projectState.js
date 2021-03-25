@@ -1,17 +1,13 @@
 import athlete from '../img/athlete-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 import theracer from '../img/theracer-small.png';
-import athlete2 from '../img/athlete2.png';
-import goodtimes2 from '../img/good-times2.jpg';
-import theracer2 from '../img/the-racer2.jpg';
 
 export const projects = [
     {
       title: 'The Athlete',
-      mainImg: athlete,
-      secondaryImg: athlete2,
+      image: athlete,
       url: '/work/the-athlete',
-      awards: [
+      details: [
         {
           title: '1 A masterpiece',
           description:
@@ -31,10 +27,9 @@ export const projects = [
     },
     {
       title: 'Good Times',
-      mainImg: goodtimes,
+      image: goodtimes,
       url: '/work/good-times',
-      secondaryImg: goodtimes2,
-      awards: [
+      details: [
         {
           title: '2 A masterpiece',
           description:
@@ -54,10 +49,9 @@ export const projects = [
     },
     {
       title: 'The Racer',
-      mainImg: theracer,
+      image: theracer,
       url: '/work/the-racer',
-      secondaryImg: theracer2,
-      awards: [
+      details: [
         {
           title: '3 A masterpiece',
           description:

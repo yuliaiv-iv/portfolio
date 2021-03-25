@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { projects } from '../utils/movieState';
+import { projects } from '../utils/projectState';
 
 import { motion } from 'framer-motion';
-import { pageAnimation } from '../animation';
+import { imageAnimation } from '../animation';
 import ScrollTop from '../components/ScrollTop';
 import Footer from '../components/Footer';
+
+import { Image } from '../styles';
 
 function Movie() {
 
@@ -20,26 +22,29 @@ function Movie() {
   }, [url]);
 
   return (
-    <Section
-      exit='exit'
-      variants={pageAnimation}
-      initial='hidden'
-      animate='show'
-      style={{ background: '#fff' }}
-    >
+    <Section style={{ background: '#fff' }}>
       <ScrollTop />
       {project && (
-        <div>
+        <div className='container'>
           <HeadLine>
             <h2>{project.title}</h2>
-            <img src={project.mainImg} alt='' />
+            <Image>
+              <motion.img
+                variants={imageAnimation}
+                exit='exit'
+                initial='hidden'
+                animate='show'
+                src={project.image}
+                alt=''
+              />
+            </Image>
           </HeadLine>
           <ProjectList>
-            {project.awards.map((award, index) =>
+            {project.details.map((d, index) =>
               <Project key={index}>
-                <h4>{award.title}</h4>
+                <h4>{d.title}</h4>
                 <div className="line"></div>
-                <p>{award.description}</p>
+                <p>{d.description}</p>
               </Project>
             )}
           </ProjectList>
@@ -50,9 +55,16 @@ function Movie() {
   );
 }
 
-const Section = styled(motion.div)`
-  background: rgb(255, 255, 255);
-  margin-top: 80px;
+const Section = styled.section`
+  .container {
+    padding: 0rem 5rem;
+    margin-top: 80px;
+  }
+  @media screen and (max-width: 1090px) {
+    .container {
+      padding: 0rem 2rem;
+    }
+  }
 `;
 
 const HeadLine = styled.div`
@@ -60,12 +72,10 @@ const HeadLine = styled.div`
   flex-direction: column;
   align-items: center;
   img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
+    max-height: 630px;
   }
   h2 {
-    padding: 2rem;
+    padding: 1rem;
   }
   @media screen and (max-width: 1090px) {
     h2 {
@@ -78,10 +88,10 @@ const ProjectList = styled.div`
   max-width: 1440px;
   margin: auto;
   align-items: center;
-  padding: 5rem;
+  padding: 5rem 0rem;
   justify-content: space-around;
   @media screen and (max-width: 1090px) {
-    padding: 3rem 2rem;
+    padding: 3rem 0rem;
   }
 `;
 
@@ -102,13 +112,13 @@ const Project = styled.div`
   }
 `;
 
-const ImageDisplay = styled.div`
-  min-height: 50vh;
-  img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-  }
-`;
+// const ImageDisplay = styled.div`
+//   min-height: 50vh;
+//   img {
+//     width: 100%;
+//     height: 100vh;
+//     object-fit: cover;
+//   }
+// `;
 
 export default Movie;

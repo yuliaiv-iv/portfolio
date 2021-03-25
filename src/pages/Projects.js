@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useScroll } from '../components/useScroll';
-import { useInView } from 'react-intersection-observer';
-import { useAnimation } from 'framer-motion';
 import ScrollTop from '../components/ScrollTop';
 import Footer from '../components/Footer';
 
@@ -12,13 +9,10 @@ import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 
 import { motion } from 'framer-motion';
-import { fade, imageAnimation, pageAnimation, lineAnimation } from '../animation';
+import { Image } from '../styles';
+import { fade, pageAnimation, lineAnimation } from '../animation';
 
-function OurWork() {
-
-  const [element, controls] = useScroll();
-  const [element2, controls2] = useScroll();
-  const [element3, controls3] = useScroll();
+function Projects() {
 
   return (
     <Section>
@@ -34,27 +28,27 @@ function OurWork() {
           <motion.h2 variants={fade}>athlete</motion.h2>
           <motion.div variants={lineAnimation} className='line'></motion.div>
           <Link to='/work/the-athlete'>
-            <Hide>
+            <Image>
               <img src={athelete} alt='something' />
-            </Hide>
+            </Image>
           </Link>
         </Movie>
-        <Movie ref={element}>
+        <Movie>
           <h2>good-times</h2>
           <div className='line'></div>
           <Link to='/work/good-times'>
-            <Hide>
-              <img variants={imageAnimation} animate={controls} src={theracer} alt='something' />
-            </Hide>
+            <Image>
+              <img src={theracer} alt='something' />
+            </Image>
           </Link>
         </Movie>
-        <Movie ref={element2}>
+        <Movie>
           <h2>the-racer</h2>
           <div className='line'></div>
           <Link to='/work/the-racer'>
-            <Hide>
-              <img variants={imageAnimation} animate={controls2} src={goodtimes} alt='something' />
-            </Hide>
+            <Image>
+              <img src={goodtimes} alt='something' />
+            </Image>
           </Link>
         </Movie>
       </Work>
@@ -74,10 +68,8 @@ const Work = styled(motion.div)`
   overflow: hidden;
   padding: 0rem 5rem;
   margin: auto;
-  h2 {
-    padding: 1rem 0rem;
-  }
   img {
+    max-height: 630px;
     transition: transform .5s ease-in-out;
     &:hover {
       transform: scale(1.10);
@@ -95,11 +87,6 @@ const Movie = styled.div`
     background: #23d997;
     margin-bottom: 3rem;
   }
-  img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-  }
   @media screen and (max-width: 1090px) {
     padding-bottom: 2rem;
   }
@@ -107,8 +94,5 @@ const Movie = styled.div`
     margin-bottom: 2rem;
   }
 `;
-const Hide = styled.div`
-  overflow: hidden;
-`;
 
-export default OurWork;
+export default Projects;

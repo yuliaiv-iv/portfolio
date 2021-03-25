@@ -15,17 +15,17 @@ const Contact = () => {
       animate="show"
     >
       <Container>
-        <Title>
+        <div>
           <Hide>
             <motion.h2 variants={titleAnimation}>Контакты</motion.h2>
           </Hide>
-        </Title>
+        </div>
         <motion.div variants={lineAnimation} className='line'></motion.div>
         <div>
           {contacts.map((c) =>
             <Hide key={c.text}>
               <Social variants={titleAnimation}>
-                <a href='mailto:yulia.ivanova6@gmail.com'>
+                <a href={c.link}>
                   <div>{c.icon}</div>
                 </a>
                 <h4>{c.text}</h4>
@@ -54,17 +54,10 @@ const ContactLayout = styled(motion.div)`
 const Container = styled.div`
   max-width: 1440px;
   margin: auto;
-  padding: 3rem 5rem;
+  margin-top: 80px;
+  padding: 0rem 5rem;
   @media screen and (max-width: 1090px) {
     padding: 2rem;
-  }
-`;
-
-const Title = styled.div`
-  padding: 2rem 0rem;
-  color: black;
-  @media screen and (max-width: 1090px) {
-    padding: 1rem 0rem;
   }
 `;
 const Social = styled(motion.div)`
@@ -80,6 +73,9 @@ const Social = styled(motion.div)`
   }
   path {
     fill: #353535;
+  }
+  .hhru {
+    fill: #ffffff;
   }
 `;
 

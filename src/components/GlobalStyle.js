@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h2 {
         font-weight: lighter;
+        padding: 1rem 0rem;
         font-size: 2.5rem;
     }
     h3 {

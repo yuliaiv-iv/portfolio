@@ -1,14 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import menu from '../img/menu.svg';
-import closeBtn from '../img/close_btn.svg';
+import closeBtn from '../img/close-btn.svg';
 
+import { NavAnimation, ItemsAnimation } from '../animation';
+import { motion } from 'framer-motion';
 
 function NavBar() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+
+function useWindowSize() {
+    const [windowSize, setWindowSize] = useState(undefined);
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize(window.innerWidth);
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return windowSize;
+  }
+
+  const windowSize = useWindowSize();
+
+  console.log(windowSize < 768 && isOpen)
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -22,17 +44,26 @@ function NavBar() {
           <h1>
             <Link className='logo' to='/'>Portfolio</Link>
           </h1>
-          <ul className={isOpen ? 'menu-open' : 'menu'}>
-            <li>
-              <NavLink exact to='/' activeClassName='active'>Обо мне</NavLink>
-            </li>
-            <li>
-              <NavLink exact to='/work' activeClassName='active'>Мои Проекты</NavLink>
-            </li>
-            <li>
-              <NavLink exact to='/contact' activeClassName='active'>Контакты</NavLink>
-            </li>
-          </ul>
+          <motion.div
+            className='menu-open menu'
+            variants={windowSize < 768 ? NavAnimation : null}
+            animate={isOpen ? 'show' : 'hidden'}
+          >
+            <motion.ul 
+              variants={windowSize < 768 ? ItemsAnimation : null}
+              //animate={(windowSize < 768 && isOpen) ? 'hidden' : 'show'}
+              >
+              <li onClick={handleClick}>
+                <NavLink exact to='/' activeClassName='active'>Обо мне</NavLink>
+              </li>
+              <li onClick={handleClick}>
+                <NavLink exact to='/work' activeClassName='active'>Мои Проекты</NavLink>
+              </li>
+              <li onClick={handleClick}>
+                <NavLink exact to='/contact' activeClassName='active'>Контакты</NavLink>
+              </li>
+            </motion.ul>
+          </motion.div>
           <button onClick={handleClick}>
             {isOpen ? <img src={closeBtn} /> : <img src={menu} />}
           </button>
@@ -79,15 +110,13 @@ const Header = styled.header`
   }
   img {
     vertical-align: bottom;
+    box-sizing: none;
   }
-  .menu {
+  ul {
     display: flex;
     list-style: none;
     z-index: 5;
-  }
-  .menu-open {
-    top: -100%;
-    transition: all 0.5s ease 0s;
+    position: relative;
   }
   li {
     padding-left: 5rem;
@@ -114,22 +143,19 @@ const Header = styled.header`
     }
   }
   @media screen and (max-width: 767px) {
-    .menu-open {
+    .menu {
       position:fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
       flex-direction: column;
       background: #282828;
-      height: 100%;
       z-index: 1;
-      padding-top: 100px;
-      transition: all 0.5s ease 0s;
+      padding-top: 60px;
     }
-    .menu {
+    /* .menu {
       display: none;
-    }
+    } */
     .navigation {
       height: 60px;
     }

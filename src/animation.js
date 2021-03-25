@@ -7,7 +7,7 @@ export const pageAnimation = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.7,
       when: 'beforeChildren',
       staggerChildren: 0.25,
     },
@@ -71,4 +71,32 @@ export const lineAnimation = {
       duration: 1, 
     },
   },
+};
+
+export const NavAnimation = {
+  hidden: { 
+    height: '0%',
+    when: 'afterChildren',
+  },
+  show: {
+    height: '100%',
+    transition: { 
+      duration: 0.5,
+      ease: 'linear',
+      when: 'beforeChildren',
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+export const ItemsAnimation = {
+  hidden: {
+    opacity: 0,
+    transition: { 
+      duration: 0.1,
+    },
+  },
+  show: {
+    opacity: 1,
+  }
 };

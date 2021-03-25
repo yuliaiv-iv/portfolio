@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import { pageAnimation } from '../animation';
 import Footer from '../components/Footer';
 
-function AboutUs() {
+function AboutMe() {
   return (
     <>
       <motion.div
@@ -27,4 +27,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default AboutMe;
