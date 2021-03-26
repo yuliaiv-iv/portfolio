@@ -1,29 +1,33 @@
 import React from 'react';
 import home2 from '../img/home2.png';
 import styled from 'styled-components';
-import { Layout, Discription, Image } from '../styles';
+import { Layout, Discription, Image, Text } from '../styles';
 import { motion } from 'framer-motion';
 import { stack } from '../utils/stack';
+import { titleAnimation, fade, imageAnimation } from '../animation';
 
 function Services() {
   return (
     <ServicesLayout>
       <Discription>
-        <h2><span>Stack </span>и навыки</h2>
-        <CardsConteiner>
-          {stack.map((s) =>
-            <Card key={s.title}>
-              <div className='icon'>
-                <img src={s.icon} alt={s.title} />
-                <h3>{s.title}</h3>
-              </div>
-            </Card>
-          )}
-        </CardsConteiner>
-        {/* <p></p> */}
+        <Text>
+          <motion.h2 variants={titleAnimation}><span>Stack </span>и навыки</motion.h2>
+        </Text>
+        <motion.div variants={fade}>
+          <CardsConteiner>
+            {stack.map((s) =>
+              <Card key={s.title}>
+                <div className='icon'>
+                  <img src={s.icon} alt={s.title} />
+                  <h3>{s.title}</h3>
+                </div>
+              </Card>
+            )}
+          </CardsConteiner>
+        </motion.div>
       </Discription>
       <Image>
-        <img src={home2} />
+        <motion.img variants={imageAnimation} src={home2} />
       </Image>
     </ServicesLayout>
   );

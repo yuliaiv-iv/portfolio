@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import ScrollTop from '../components/ScrollTop';
 import Footer from '../components/Footer';
-
-import athelete from '../img/athlete-small.png';
-import theracer from '../img/theracer-small.png';
-import goodtimes from '../img/goodtimes-small.png';
+import News from '../img/news-main.jpg';
+import Player from '../img/player-main.jpg';
+import Mesto from '../img/mesto-main.png';
+import Travel from '../img/travel-main.jpg';
 
 import { motion } from 'framer-motion';
 import { Image } from '../styles';
@@ -29,16 +29,16 @@ function Projects() {
           <motion.div variants={lineAnimation} className='line'></motion.div>
           <Link to='/work/the-athlete'>
             <Image>
-              <img src={athelete} alt='something' />
+              <img src={News} alt='something' />
             </Image>
           </Link>
         </Movie>
         <Movie>
-          <h2>good-times</h2>
-          <div className='line'></div>
+          <motion.h2 variants={fade}>good-times</motion.h2>
+          <motion.div variants={lineAnimation} className='line'></motion.div>
           <Link to='/work/good-times'>
             <Image>
-              <img src={theracer} alt='something' />
+              <img src={Player} alt='something' />
             </Image>
           </Link>
         </Movie>
@@ -47,7 +47,16 @@ function Projects() {
           <div className='line'></div>
           <Link to='/work/the-racer'>
             <Image>
-              <img src={goodtimes} alt='something' />
+              <img src={Mesto} alt='something' />
+            </Image>
+          </Link>
+        </Movie>
+        <Movie>
+          <h2>travel</h2>
+          <div className='line'></div>
+          <Link to='/work/travel'>
+            <Image>
+              <img src={Travel} alt='something' />
             </Image>
           </Link>
         </Movie>
@@ -69,7 +78,7 @@ const Work = styled(motion.div)`
   padding: 0rem 5rem;
   margin: auto;
   img {
-    max-height: 630px;
+    /* max-height: 630px; */
     transition: transform .5s ease-in-out;
     &:hover {
       transform: scale(1.10);

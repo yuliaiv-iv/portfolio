@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { projects } from '../utils/projectState';
 
 import { motion } from 'framer-motion';
-import { imageAnimation } from '../animation';
+import { imageAnimation, pageAnimation } from '../animation';
 import ScrollTop from '../components/ScrollTop';
 import Footer from '../components/Footer';
 
@@ -22,13 +22,19 @@ function Movie() {
   }, [url]);
 
   return (
-    <Section style={{ background: '#fff' }}>
+    <Section
+      style={{ background: '#fff' }}
+      exit='exit'
+      variants={pageAnimation}
+      initial='hidden'
+      animate='show'
+    >
       <ScrollTop />
       {project && (
         <div className='container'>
           <HeadLine>
             <h2>{project.title}</h2>
-            <Image>
+            <Image className='image'>
               <motion.img
                 variants={imageAnimation}
                 exit='exit'
@@ -38,6 +44,7 @@ function Movie() {
                 alt=''
               />
             </Image>
+            <a href='#'>GitHub</a>
           </HeadLine>
           <ProjectList>
             {project.details.map((d, index) =>
@@ -55,15 +62,18 @@ function Movie() {
   );
 }
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   .container {
-    padding: 0rem 5rem;
     margin-top: 80px;
   }
+  .image {
+    box-shadow: 0 20px 58px rgb(14 26 57 / 30%);
+    margin: 0rem 5rem;
+  }
   @media screen and (max-width: 1090px) {
-    .container {
+    /* .container {
       padding: 0rem 2rem;
-    }
+    } */
   }
 `;
 
@@ -72,7 +82,8 @@ const HeadLine = styled.div`
   flex-direction: column;
   align-items: center;
   img {
-    max-height: 630px;
+    object-fit: contain;
+    vertical-align: bottom;
   }
   h2 {
     padding: 1rem;
@@ -88,7 +99,7 @@ const ProjectList = styled.div`
   max-width: 1440px;
   margin: auto;
   align-items: center;
-  padding: 5rem 0rem;
+  padding: 5rem 5rem;
   justify-content: space-around;
   @media screen and (max-width: 1090px) {
     padding: 3rem 0rem;
@@ -111,14 +122,5 @@ const Project = styled.div`
     color: #000000;
   }
 `;
-
-// const ImageDisplay = styled.div`
-//   min-height: 50vh;
-//   img {
-//     width: 100%;
-//     height: 100vh;
-//     object-fit: cover;
-//   }
-// `;
 
 export default Movie;

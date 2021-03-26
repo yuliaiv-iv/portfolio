@@ -38,10 +38,6 @@ const Contact = () => {
   );
 };
 
-const Hide = styled.div`
-  overflow: hidden;
-`;
-
 const ContactLayout = styled(motion.div)`
     color: #353535;
     min-height: 100vh;
@@ -51,6 +47,7 @@ const ContactLayout = styled(motion.div)`
     margin-bottom: 2rem;
   }
 `;
+
 const Container = styled.div`
   max-width: 1440px;
   margin: auto;
@@ -60,6 +57,11 @@ const Container = styled.div`
     padding: 2rem;
   }
 `;
+
+const Hide = styled.div`
+  overflow: hidden;
+`;
+
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;

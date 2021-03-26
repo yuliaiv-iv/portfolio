@@ -28,8 +28,8 @@ export const Image = styled.div`
   z-index: 2;
   align-self: center;
   img {
-    width: 100%;
     object-fit: cover;
+    width: 100%
   }
 `;
 
