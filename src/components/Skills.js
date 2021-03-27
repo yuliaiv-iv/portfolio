@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 import { stack } from '../utils/stack';
 import { titleAnimation, fade, imageAnimation } from '../animation';
 
-function Services() {
+function Skills() {
   return (
-    <ServicesLayout>
+    <SkillsLayout>
       <Discription>
         <Text>
           <motion.h2 variants={titleAnimation}>
@@ -34,11 +34,11 @@ function Services() {
           src={home2}
         />
       </Image>
-    </ServicesLayout>
+    </SkillsLayout>
   );
 }
 
-const ServicesLayout = styled(Layout)`
+const SkillsLayout = styled(Layout)`
   margin-top: 0;
   h2 {
     padding-bottom: 2rem;
@@ -78,4 +78,4 @@ const Card = styled.div`
   }
 `;
 
-export default Services;
+export default Skills;
