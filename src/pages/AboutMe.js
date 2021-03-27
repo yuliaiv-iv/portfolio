@@ -1,7 +1,7 @@
 import React from 'react';
 import About from "../components/About";
 import Faq from '../components/Faq';
-import Services from '../components/Services';
+import Skills from '../components/Skills';
 import ScrollTop from '../components/ScrollTop';
 import { motion } from 'framer-motion';
 import { pageAnimation } from '../animation';
@@ -19,7 +19,7 @@ function AboutMe() {
       >
         <ScrollTop />
         <About />
-        <Services />
+        <Skills />
         <Faq />
       </motion.div>
       <Footer theme='#1b1b1b' />
