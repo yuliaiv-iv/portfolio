@@ -11,7 +11,7 @@ export const Layout = styled(motion.div)`
   padding: 7rem 5rem;
   margin-top: 60px;
   color: white;
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     padding: 4rem 2rem;
     grid-column-gap: 30px
   }

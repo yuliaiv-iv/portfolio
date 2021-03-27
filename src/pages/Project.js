@@ -41,17 +41,23 @@ function Movie() {
                 initial='hidden'
                 animate='show'
                 src={project.image}
-                alt=''
+                alt={project.title}
               />
             </Image>
-            <a href='#'>GitHub</a>
+            <a
+              href={project.link}
+              target='_blank'
+              rel="noreferrer"
+            >
+              GitHub →
+            </a>
           </HeadLine>
           <ProjectList>
-            {project.details.map((d, index) =>
-              <Project key={index}>
-                <h4>{d.title}</h4>
+            {project.details.map(({title, description}) =>
+              <Project key={title}>
+                <h4>{title}</h4>
                 <div className="line"></div>
-                <p>{d.description}</p>
+                <p>{description}</p>
               </Project>
             )}
           </ProjectList>
@@ -68,12 +74,17 @@ const Section = styled(motion.section)`
   }
   .image {
     box-shadow: 0 20px 58px rgb(14 26 57 / 30%);
-    margin: 0rem 5rem;
   }
-  @media screen and (max-width: 1090px) {
-    /* .container {
+  h2 {
+    padding: 1rem 0rem;
+  }
+  a {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 1180px) {
+    .container {
       padding: 0rem 2rem;
-    } */
+    }
   }
 `;
 
@@ -85,12 +96,13 @@ const HeadLine = styled.div`
     object-fit: contain;
     vertical-align: bottom;
   }
-  h2 {
-    padding: 1rem;
-  }
-  @media screen and (max-width: 1090px) {
-    h2 {
-      padding: 1rem;
+  a {
+      font-size: 1.3rem;
+      color: #000;
+    }
+  @media screen and (max-width: 1180px) {
+    a {
+      font-size: 1rem;
     }
   }
 `;
@@ -101,7 +113,7 @@ const ProjectList = styled.div`
   align-items: center;
   padding: 5rem 5rem;
   justify-content: space-around;
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     padding: 3rem 0rem;
   }
 `;

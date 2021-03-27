@@ -11,23 +11,28 @@ function Services() {
     <ServicesLayout>
       <Discription>
         <Text>
-          <motion.h2 variants={titleAnimation}><span>Stack </span>и навыки</motion.h2>
+          <motion.h2 variants={titleAnimation}>
+            <span>Stack </span>и навыки
+          </motion.h2>
         </Text>
         <motion.div variants={fade}>
-          <CardsConteiner>
-            {stack.map((s) =>
-              <Card key={s.title}>
+          <Cards>
+            {stack.map(({ title, icon, }) =>
+              <Card key={title}>
                 <div className='icon'>
-                  <img src={s.icon} alt={s.title} />
-                  <h3>{s.title}</h3>
+                  <img src={icon} alt={title} />
+                  <h3>{title}</h3>
                 </div>
               </Card>
             )}
-          </CardsConteiner>
+          </Cards>
         </motion.div>
       </Discription>
       <Image>
-        <motion.img variants={imageAnimation} src={home2} />
+        <motion.img
+          variants={imageAnimation}
+          src={home2}
+        />
       </Image>
     </ServicesLayout>
   );
@@ -47,7 +52,7 @@ const ServicesLayout = styled(Layout)`
   }
 `;
 
-const CardsConteiner = styled.div`
+const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 5px;
@@ -56,20 +61,20 @@ const Card = styled.div`
   .icon {
     display: flex;
     align-items: center;
+  h3 {
+    margin-left: 1rem;
+    padding: 1rem;
+    max-width: 140px;
+  }
+  @media screen and (max-width: 1180px) {
     h3 {
-      margin-left: 1rem;
-      padding: 1rem;
-      max-width: 140px;
+      font-size: 1rem;
+      padding: 0.6rem;
     }
-    @media screen and (max-width: 1090px) {
-      h3 {
-        font-size: 1rem;
-        padding: 0.6rem;
-      }
-      img {
-        width: 35px;
-      }
+    img {
+      width: 35px;
     }
+  }
   }
 `;
 

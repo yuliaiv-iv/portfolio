@@ -16,7 +16,7 @@ function Toggle({ children, title }) {
     <StyledToggle layout onClick={handleToggle}>
       <motion.h4 layout>
         {title}
-        {!toggle ? <img src={arrow} /> : <img src={arrowup} />}
+        {!toggle ? <img src={arrow} alt='открыть' /> : <img src={arrowup} alt='закрыть'/>}
       </motion.h4>
       {toggle ? children : ''}
       <div className='line'></div>

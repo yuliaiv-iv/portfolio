@@ -2,94 +2,94 @@ import News from '../img/news.jpg';
 import Player from '../img/player.jpg';
 import Mesto from '../img/mesto.jpg';
 import Travel from '../img/travel.jpg';
+import NewsMain from '../img/news-main.jpg';
+import PlayerMain from '../img/player-main.jpg';
+import MestoMain from '../img/mesto-main.png';
+import TravelMain from '../img/travel-main.jpg';
 
 export const projects = [
-    {
-      title: 'The Athlete',
-      image: News,
-      url: '/work/the-athlete',
-      details: [
-        {
-          title: '1 A masterpiece',
-          description:
-            '“1 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'Fresh look on a brutal sport.',
-          description:
-            '“1 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'It’s okay lmao.',
-          description:
-            '“1 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-      ],
-    },
-    {
-      title: 'Good Times',
-      image: Player,
-      url: '/work/good-times',
-      details: [
-        {
-          title: '2 A masterpiece',
-          description:
-            '“2 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'Fresh look on a brutal sport.',
-          description:
-            '“2 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'It’s okay lmao.',
-          description:
-            '“2 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-      ],
-    },
-    {
-      title: 'The Racer',
-      image: Mesto,
-      url: '/work/the-racer',
-      details: [
-        {
-          title: '3 A masterpiece',
-          description:
-            '“3 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'Fresh look on a brutal sport.',
-          description:
-            '“3 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'It’s okay lmao.',
-          description:
-            '“3 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-      ],
-    },
-    {
-      title: 'Travel',
-      image: Travel,
-      url: '/work/travel',
-      details: [
-        {
-          title: '3 A masterpiece',
-          description:
-            '“3 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'Fresh look on a brutal sport.',
-          description:
-            '“3 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'It’s okay lmao.',
-          description:
-            '“3 Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-      ],
-    },
-  ];
+  {
+    title: 'News Explorer',
+    mainImage: NewsMain,
+    image: News,
+    url: '/work/news-explorer',
+    link: 'https://github.com/yuliaiv-iv/news-explorer-frontend',
+    details: [
+      {
+        title: 'Описание',
+        description: 'Сервис, в котором можно найти новости по запросу и сохранить в личном кабинете',
+      },
+      {
+        title: 'Технологии',
+        description: 'перечислить технологии',
+      },
+      {
+        title: 'Методологии',
+        description: 'перечислить vетодологии',
+      },
+    ],
+  },
+  {
+    title: 'Mesto',
+    mainImage: MestoMain,
+    image: Mesto,
+    url: '/work/mesto',
+    link: 'https://github.com/yuliaiv-iv/react-mesto-auth',
+    details: [
+      {
+        title: 'Описание',
+        description: 'Сервис, в котором можно найти новости по запросу и сохранить в личном кабинете',
+      },
+      {
+        title: 'Технологии',
+        description: 'перечислить технологии',
+      },
+      {
+        title: 'Методологии',
+        description: 'перечислить vетодологии',
+      },
+    ],
+  },
+  {
+    title: 'Russian Travel',
+    mainImage: TravelMain,
+    image: Travel,
+    url: '/work/travel',
+    link: 'https://github.com/yuliaiv-iv/russian-travel',
+    details: [
+      {
+        title: 'Описание',
+        description: 'Сервис, в котором можно найти новости по запросу и сохранить в личном кабинете',
+      },
+      {
+        title: 'Технологии',
+        description: 'перечислить технологии',
+      },
+      {
+        title: 'Методологии',
+        description: 'перечислить vетодологии',
+      },
+    ],
+  },
+  {
+    title: 'Music Player',
+    mainImage: PlayerMain,
+    image: Player,
+    url: '/work/player',
+    link: 'https://github.com/yuliaiv-iv/music-app',
+    details: [
+      {
+        title: 'Описание',
+        description: 'Сервис, в котором можно найти новости по запросу и сохранить в личном кабинете',
+      },
+      {
+        title: 'Технологии',
+        description: 'перечислить технологии',
+      },
+      {
+        title: 'Методологии',
+        description: 'перечислить vетодологии',
+      },
+    ],
+  },
+];

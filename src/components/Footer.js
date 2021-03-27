@@ -2,15 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { GitHub } from './icons/GitHub';
 import { FaceBook } from './icons/FaceBook';
+import { externalLinks } from '../utils/info';
 
-
-function Footer({theme}) {
+function Footer({ theme }) {
   return (
     <FooterLayout style={{ background: `${theme}` }}>
       <p>&copy; 2021 Yulia Ivanova</p>
       <div>
-        <a href='https://github.com/yuliaiv-iv'><GitHub /></a>
-        <a href='https://github.com/yuliaiv-iv'><FaceBook /></a>
+        <a
+          href={externalLinks.gitHub}
+          target='_blank'
+          rel="noreferrer"
+        >
+          <GitHub />
+        </a>
+        <a
+          href={externalLinks.faceBook}
+          target='_blank'
+          rel="noreferrer"
+        >
+          <FaceBook />
+        </a>
       </div>
     </FooterLayout>
   );
@@ -43,7 +55,7 @@ const FooterLayout = styled.footer`
     width: 100px;
     justify-content: space-between;
   }
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     padding: 0rem 2rem;
     svg {
       width: 25px;

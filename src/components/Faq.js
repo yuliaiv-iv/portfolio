@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../styles';
 import { info } from '../utils/info';
@@ -10,10 +10,10 @@ function Faq() {
     <FaqLayout>
       <h2>Обо мне</h2>
       <AnimateSharedLayout>
-        {info.map((i) =>
-          <Toggle title={i.title}>
+        {info.map(({title, discription}) =>
+          <Toggle key={title} title={title}>
             <div className='answer'>
-              <p>{i.discription}</p>
+              <p>{discription}</p>
             </div>
           </Toggle>
         )}
@@ -42,7 +42,7 @@ const FaqLayout = styled(Layout)`
     margin: 0.8rem 0rem;
     width: 100%;
   }
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     h4 {
       padding: 1rem 0rem;
     }

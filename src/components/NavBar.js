@@ -1,41 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useWindowSize } from '../hooks/useWindowSize';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import menu from '../img/menu.svg';
 import closeBtn from '../img/close-btn.svg';
-
 import { NavAnimation, ItemsAnimation } from '../animation';
 import { motion } from 'framer-motion';
+import { navigation } from '../utils/info';
 
 function NavBar() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-
-function useWindowSize() {
-    const [windowSize, setWindowSize] = useState(undefined);
-  
-    useEffect(() => {
-      function handleResize() {
-        setWindowSize(window.innerWidth);
-      }
-      window.addEventListener('resize', handleResize);
-      handleResize();
-
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
-  
-    return windowSize;
-  }
+  const [isShow, setIsShow] = useState({ NavAnimation, ItemsAnimation });
 
   const windowSize = useWindowSize();
-
-  console.log(windowSize < 768 && isOpen)
+  const resolution = windowSize < 768;
 
   const handleClick = () => {
     setIsOpen(!isOpen);
     setIsClicked(!isClicked);
   };
+
+  const handleOpacity = () => {
+    setIsShow(isShow.ItemsAnimation.show.opacity)
+    setIsShow(isShow.NavAnimation.show.height)
+  }
 
   return (
     <Header>
@@ -45,27 +35,29 @@ function useWindowSize() {
             <Link className='logo' to='/'>Portfolio</Link>
           </h1>
           <motion.div
-            className='menu-open menu'
-            variants={windowSize < 768 ? NavAnimation : null}
-            animate={isOpen ? 'show' : 'hidden'}
+            className='menu'
+            style={{ height: 'max-content' }}
+            variants={resolution ? NavAnimation : handleOpacity}
+            animate={(resolution && isOpen) ? 'show' : 'hidden'}
           >
-            <motion.ul 
-              variants={windowSize < 768 ? ItemsAnimation : null}
-              //animate={(windowSize < 768 && isOpen) ? 'hidden' : 'show'}
-              >
-              <li onClick={handleClick}>
-                <NavLink exact to='/' activeClassName='active'>Обо мне</NavLink>
-              </li>
-              <li onClick={handleClick}>
-                <NavLink exact to='/work' activeClassName='active'>Мои Проекты</NavLink>
-              </li>
-              <li onClick={handleClick}>
-                <NavLink exact to='/contact' activeClassName='active'>Контакты</NavLink>
-              </li>
+            <motion.ul
+              variants={resolution ? ItemsAnimation : handleOpacity}
+              animate={isOpen ? 'show' : 'hidden'}
+            >
+              {navigation.map(({ text, url }) =>
+                <li onClick={handleClick} key={text}>
+                  <NavLink
+                    exact to={url}
+                    activeClassName='active'
+                  >
+                    {text}
+                  </NavLink>
+                </li>
+              )}
             </motion.ul>
           </motion.div>
           <button onClick={handleClick}>
-            {isOpen ? <img src={closeBtn} /> : <img src={menu} />}
+            {isOpen ? <img src={closeBtn} alt='закрыть' /> : <img src={menu} alt='меню' />}
           </button>
         </div>
       </div>
@@ -102,11 +94,13 @@ const Header = styled.header`
     align-items: center;
   }
   button {
-    background: transparent;
     display: none;
     border: none;
     padding: 0;
     z-index: 5;
+    &:hover {
+      background: none;
+    }
   }
   img {
     vertical-align: bottom;
@@ -137,7 +131,7 @@ const Header = styled.header`
     border-bottom: solid 3px #23d997;
     padding-bottom: 5px;
   }
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     .container {
       padding: 0rem 2rem;
     }
@@ -153,14 +147,14 @@ const Header = styled.header`
       z-index: 1;
       padding-top: 60px;
     }
-    /* .menu {
-      display: none;
-    } */
+    ul {
+      display: block;
+    }
     .navigation {
       height: 60px;
     }
     li {
-      padding: 0.6rem 2rem;   
+      padding: 1rem 2rem;   
     }
     button {
       display: block;

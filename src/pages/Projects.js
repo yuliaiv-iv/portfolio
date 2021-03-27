@@ -3,11 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import ScrollTop from '../components/ScrollTop';
 import Footer from '../components/Footer';
-import News from '../img/news-main.jpg';
-import Player from '../img/player-main.jpg';
-import Mesto from '../img/mesto-main.png';
-import Travel from '../img/travel-main.jpg';
-
+import { projects } from '../utils/projectState';
 import { motion } from 'framer-motion';
 import { Image } from '../styles';
 import { fade, pageAnimation, lineAnimation } from '../animation';
@@ -24,44 +20,23 @@ function Projects() {
         style={{ background: '#fff' }}
       >
         <ScrollTop />
-        <Movie>
-          <motion.h2 variants={fade}>athlete</motion.h2>
-          <motion.div variants={lineAnimation} className='line'></motion.div>
-          <Link to='/work/the-athlete'>
-            <Image>
-              <img src={News} alt='something' />
-            </Image>
-          </Link>
-        </Movie>
-        <Movie>
-          <motion.h2 variants={fade}>good-times</motion.h2>
-          <motion.div variants={lineAnimation} className='line'></motion.div>
-          <Link to='/work/good-times'>
-            <Image>
-              <img src={Player} alt='something' />
-            </Image>
-          </Link>
-        </Movie>
-        <Movie>
-          <h2>the-racer</h2>
-          <div className='line'></div>
-          <Link to='/work/the-racer'>
-            <Image>
-              <img src={Mesto} alt='something' />
-            </Image>
-          </Link>
-        </Movie>
-        <Movie>
-          <h2>travel</h2>
-          <div className='line'></div>
-          <Link to='/work/travel'>
-            <Image>
-              <img src={Travel} alt='something' />
-            </Image>
-          </Link>
-        </Movie>
+        {projects.map(({ title, url, mainImage }) => (
+          <Movie key={title}>
+            <motion.h2 variants={fade}>{title}</motion.h2>
+            <motion.div
+              variants={lineAnimation}
+              className='line'
+            >
+            </motion.div>
+            <Link to={url}>
+              <Image>
+                <img src={mainImage} alt={title} />
+              </Image>
+            </Link>
+          </Movie>
+        ))}
       </Work>
-      <Footer theme='#fff'/>
+      <Footer theme='#fff' />
     </Section>
   );
 }
@@ -69,6 +44,9 @@ function Projects() {
 const Section = styled.section`
   background: rgb(255, 255, 255);
   margin-top: 80px;
+  h2 {
+    padding: 1rem 0rem;
+  }
 `;
 
 const Work = styled(motion.div)`
@@ -78,13 +56,12 @@ const Work = styled(motion.div)`
   padding: 0rem 5rem;
   margin: auto;
   img {
-    /* max-height: 630px; */
     transition: transform .5s ease-in-out;
     &:hover {
       transform: scale(1.10);
     }
   }
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     padding: 0rem 2rem;
   }
 `;
@@ -96,7 +73,7 @@ const Movie = styled.div`
     background: #23d997;
     margin-bottom: 3rem;
   }
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     padding-bottom: 2rem;
   }
   .line {

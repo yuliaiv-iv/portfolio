@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-//Animation
 import { motion } from 'framer-motion';
 import { pageAnimation, titleAnimation, lineAnimation } from '../animation';
 import { contacts } from '../utils/info';
@@ -17,18 +16,28 @@ const Contact = () => {
       <Container>
         <div>
           <Hide>
-            <motion.h2 variants={titleAnimation}>Контакты</motion.h2>
+            <motion.h2 variants={titleAnimation}>
+              Контакты
+            </motion.h2>
           </Hide>
         </div>
-        <motion.div variants={lineAnimation} className='line'></motion.div>
+        <motion.div
+          variants={lineAnimation}
+          className='line'
+        >
+        </motion.div>
         <div>
-          {contacts.map((c) =>
-            <Hide key={c.text}>
+          {contacts.map(({text, link, icon}) =>
+            <Hide key={text}>
               <Social variants={titleAnimation}>
-                <a href={c.link}>
-                  <div>{c.icon}</div>
+                <a 
+                  href={link} 
+                  target='_blank' 
+                  rel="noreferrer"
+                >
+                  <div>{icon}</div>
                 </a>
-                <h4>{c.text}</h4>
+                <h4>{text}</h4>
               </Social>
             </Hide>
           )}
@@ -39,8 +48,11 @@ const Contact = () => {
 };
 
 const ContactLayout = styled(motion.div)`
-    color: #353535;
-    min-height: 100vh;
+  color: #353535;
+  min-height: 100vh;
+  h2 {
+    padding: 1rem 0rem;
+  }
   .line {
     height: 0.5rem;
     background: #23d997;
@@ -53,7 +65,7 @@ const Container = styled.div`
   margin: auto;
   margin-top: 80px;
   padding: 0rem 5rem;
-  @media screen and (max-width: 1090px) {
+  @media screen and (max-width: 1180px) {
     padding: 2rem;
   }
 `;
