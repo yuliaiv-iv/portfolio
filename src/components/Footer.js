@@ -7,22 +7,24 @@ import { externalLinks } from '../utils/info';
 function Footer({ theme }) {
   return (
     <FooterLayout style={{ background: `${theme}` }}>
-      <p>&copy; 2021 Yulia Ivanova</p>
-      <div>
-        <a
-          href={externalLinks.gitHub}
-          target='_blank'
-          rel="noreferrer"
-        >
-          <GitHub />
-        </a>
-        <a
-          href={externalLinks.faceBook}
-          target='_blank'
-          rel="noreferrer"
-        >
-          <FaceBook />
-        </a>
+      <div className='container'>
+        <p>&copy; 2021 Yulia Ivanova</p>
+        <div>
+          <a
+            href={externalLinks.gitHub}
+            target='_blank'
+            rel="noreferrer"
+          >
+            <GitHub />
+          </a>
+          <a
+            href={externalLinks.faceBook}
+            target='_blank'
+            rel="noreferrer"
+          >
+            <FaceBook />
+          </a>
+        </div>
       </div>
     </FooterLayout>
   );
@@ -30,12 +32,11 @@ function Footer({ theme }) {
 
 const FooterLayout = styled.footer`
   min-height: 8vh;
-  max-width: 1440px;
-  margin: auto;
-  padding: 1rem 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 2rem 5rem;
+  }
   p {
     font-weight: 400;
     font-size: 18px;
@@ -52,8 +53,10 @@ const FooterLayout = styled.footer`
   }
   div {
     display: flex;
-    width: 100px;
     justify-content: space-between;
+  }
+  a {
+    padding-left: 2rem;
   }
   @media screen and (max-width: 1180px) {
     padding: 0rem 2rem;
@@ -61,9 +64,17 @@ const FooterLayout = styled.footer`
       width: 25px;
       height: 25px;
     }
-    div {
-      width: 70px;
+    .container {
+      padding: 2rem 0rem;
     }
+  }
+  @media screen and (max-width: 700px) {
+    .container {
+      padding: 1rem 0rem;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    padding: 0rem 1rem;
   }
 `;
 

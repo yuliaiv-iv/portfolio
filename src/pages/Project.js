@@ -31,7 +31,7 @@ function Movie() {
     >
       <ScrollTop />
       {project && (
-        <div className='container'>
+        <div className='section'>
           <HeadLine>
             <h2>{project.title}</h2>
             <Image className='image'>
@@ -69,7 +69,7 @@ function Movie() {
 }
 
 const Section = styled(motion.section)`
-  .container {
+  .section {
     margin-top: 80px;
   }
   .image {
@@ -78,12 +78,14 @@ const Section = styled(motion.section)`
   h2 {
     padding: 1rem 0rem;
   }
-  a {
-    font-size: 1.5rem;
-  }
   @media screen and (max-width: 1180px) {
-    .container {
+    .section {
       padding: 0rem 2rem;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .section {
+      padding: 0rem 1rem;
     }
   }
 `;

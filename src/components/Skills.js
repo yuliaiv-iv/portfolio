@@ -1,12 +1,15 @@
 import React from 'react';
-import home2 from '../img/home2.png';
+import skills from '../img/skills.jpg';
 import styled from 'styled-components';
 import { Layout, Discription, Image, Text } from '../styles';
 import { motion } from 'framer-motion';
 import { stack } from '../utils/stack';
 import { titleAnimation, fade, imageAnimation } from '../animation';
 
+
 function Skills() {
+
+
   return (
     <SkillsLayout>
       <Discription>
@@ -30,8 +33,9 @@ function Skills() {
       </Discription>
       <Image>
         <motion.img
+          className='image' 
           variants={imageAnimation}
-          src={home2}
+          src={skills}
         />
       </Image>
     </SkillsLayout>
@@ -50,6 +54,11 @@ const SkillsLayout = styled(Layout)`
   span {
     color: #D96ED4;
   }
+  @media screen and (max-width: 700px) {
+    .image {
+      display: none;
+    }
+  }
 `;
 
 const Cards = styled.div`
@@ -65,8 +74,9 @@ const Card = styled.div`
     margin-left: 1rem;
     padding: 1rem;
     max-width: 140px;
+    font-size: 1.2rem;
   }
-  @media screen and (max-width: 1180px) {
+  @media screen and (max-width: 1090px) {
     h3 {
       font-size: 1rem;
       padding: 0.6rem;

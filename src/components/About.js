@@ -1,5 +1,6 @@
 import React from 'react';
-import about from '../img/home2.png';
+import profile from '../img/profile.jpeg';
+import styled from 'styled-components';
 import Wave from './icons/Wave';
 import { Layout, Discription, Image, Text } from '../styles';
 import { motion } from 'framer-motion';
@@ -7,6 +8,8 @@ import { titleAnimation, fade, imageAnimation } from '../animation';
 import { externalLinks } from '../utils/info';
 
 function About() {
+
+
   return (
     <Layout>
       <Discription>
@@ -19,7 +22,7 @@ function About() {
           </Text>
         </motion.div>
         <motion.p variants={fade}>Обучение по направлению направлению</motion.p>
-        <motion.button variants={fade}>
+        <Button variants={fade}>
           <a
             href={externalLinks.hh}
             target='_blank'
@@ -27,12 +30,13 @@ function About() {
           >
             Резюме
           </a>
-        </motion.button>
+        </Button>
       </Discription>
       <Image>
-        <motion.img
+        <Profile
+          className='image'
           variants={imageAnimation}
-          src={about}
+          src={profile}
           alt='about'
         />
       </Image>
@@ -41,5 +45,16 @@ function About() {
   );
 }
 
+const Button = styled(motion.button)`
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+`;
+
+const Profile = styled(motion.img)`
+  @media screen and (max-width: 700px) {
+    max-width: 300px;
+  }
+`;
 
 export default About;

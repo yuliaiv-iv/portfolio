@@ -136,7 +136,7 @@ const Header = styled.header`
       padding: 0rem 2rem;
     }
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 769px) {
     .menu {
       position:fixed;
       top: 0;
@@ -158,6 +158,11 @@ const Header = styled.header`
     }
     button {
       display: block;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .container {
+      padding: 0rem 1rem;
     }
   }
 `;

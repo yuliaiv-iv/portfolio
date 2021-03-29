@@ -58,6 +58,11 @@ const ContactLayout = styled(motion.div)`
     background: #23d997;
     margin-bottom: 2rem;
   }
+  @media screen and (max-width: 500px) {
+    .line {
+      height: 0.3rem;
+    }
+  }
 `;
 
 const Container = styled.div`
@@ -67,6 +72,9 @@ const Container = styled.div`
   padding: 0rem 5rem;
   @media screen and (max-width: 1180px) {
     padding: 2rem;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 0rem 1rem;
   }
 `;
 

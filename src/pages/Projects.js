@@ -47,6 +47,11 @@ const Section = styled.section`
   h2 {
     padding: 1rem 0rem;
   }
+  @media screen and (max-width: 500px) {
+    h2 {
+    padding: 0rem;
+  }
+  }
 `;
 
 const Work = styled(motion.div)`
@@ -64,6 +69,9 @@ const Work = styled(motion.div)`
   @media screen and (max-width: 1180px) {
     padding: 0rem 2rem;
   }
+  @media screen and (max-width: 500px) {
+    padding: 0rem 1rem;
+  }
 `;
 
 const Movie = styled.div`
@@ -78,6 +86,12 @@ const Movie = styled.div`
   }
   .line {
     margin-bottom: 2rem;
+  }
+  @media screen and (max-width: 700px) {
+    .line {
+      margin-bottom: 0rem;
+      height: 0.3rem;
+    }
   }
 `;
 
