@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { projects } from '../utils/projectState';
-
 import { motion } from 'framer-motion';
 import { imageAnimation, pageAnimation } from '../animation';
 import ScrollTop from '../components/ScrollTop';
 import Footer from '../components/Footer';
-
 import { Image } from '../styles';
 
 function Movie() {
@@ -83,6 +81,11 @@ const Section = styled(motion.section)`
       padding: 0rem 2rem;
     }
   }
+  @media screen and (max-width: 769px) {
+    .section {
+      margin-top: 60px;
+    }
+  }
   @media screen and (max-width: 500px) {
     .section {
       padding: 0rem 1rem;
@@ -99,9 +102,10 @@ const HeadLine = styled.div`
     vertical-align: bottom;
   }
   a {
-      font-size: 1.3rem;
-      color: #000;
-    }
+    font-size: 1.3rem;
+    color: #000;
+    padding-top: 1rem;
+  }
   @media screen and (max-width: 1180px) {
     a {
       font-size: 1rem;

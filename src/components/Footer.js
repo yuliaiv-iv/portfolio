@@ -76,6 +76,9 @@ const FooterLayout = styled.footer`
   @media screen and (max-width: 500px) {
     padding: 0rem 1rem;
   }
+  a {
+    padding-left: 1rem;
+  }
 `;
 
 export default Footer;

@@ -6,9 +6,7 @@ import { motion } from 'framer-motion';
 import { stack } from '../utils/stack';
 import { titleAnimation, fade, imageAnimation } from '../animation';
 
-
 function Skills() {
-
 
   return (
     <SkillsLayout>

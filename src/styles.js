@@ -46,11 +46,6 @@ export const Image = styled.div`
     object-fit: cover;
     width: 100%
   }
-  @media screen and (max-width: 700px) {
-    img {
-      margin-top: 2rem;
-    }
-  }
 `;
 
 export const Text = styled.div`

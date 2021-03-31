@@ -47,10 +47,13 @@ const Section = styled.section`
   h2 {
     padding: 1rem 0rem;
   }
+  @media screen and (max-width: 769px) {
+    margin-top: 60px;
+  }
   @media screen and (max-width: 500px) {
     h2 {
-    padding: 0rem;
-  }
+      padding: 0.6rem;
+    }
   }
 `;
 
@@ -89,7 +92,7 @@ const Movie = styled.div`
   }
   @media screen and (max-width: 700px) {
     .line {
-      margin-bottom: 0rem;
+      margin-bottom: 1rem;
       height: 0.3rem;
     }
   }

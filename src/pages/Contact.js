@@ -26,22 +26,20 @@ const Contact = () => {
           className='line'
         >
         </motion.div>
-        <div>
-          {contacts.map(({text, link, icon}) =>
+        {contacts.map(({ text, link, icon }) =>
+          <a
+            href={link}
+            target='_blank'
+            rel="noreferrer"
+          >
             <Hide key={text}>
               <Social variants={titleAnimation}>
-                <a 
-                  href={link} 
-                  target='_blank' 
-                  rel="noreferrer"
-                >
-                  <div>{icon}</div>
-                </a>
+                <div>{icon}</div>
                 <h4>{text}</h4>
               </Social>
             </Hide>
-          )}
-        </div>
+          </a>
+        )}
       </Container>
     </ContactLayout>
   );
@@ -49,7 +47,7 @@ const Contact = () => {
 
 const ContactLayout = styled(motion.div)`
   color: #353535;
-  min-height: 100vh;
+  height: calc(100vh - 80px);
   h2 {
     padding: 1rem 0rem;
   }
@@ -58,7 +56,10 @@ const ContactLayout = styled(motion.div)`
     background: #23d997;
     margin-bottom: 2rem;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 769px) {
+    height: calc(100vh - 60px);
+  }
+  @media screen and (max-width: 700px) {
     .line {
       height: 0.3rem;
     }
@@ -72,6 +73,9 @@ const Container = styled.div`
   padding: 0rem 5rem;
   @media screen and (max-width: 1180px) {
     padding: 2rem;
+  }
+  @media screen and (max-width: 769px) {
+    margin-top: 60px;
   }
   @media screen and (max-width: 500px) {
     padding: 0rem 1rem;
@@ -88,6 +92,7 @@ const Social = styled(motion.div)`
   h4 {
     margin: 1rem;
     font-weight: normal;
+    color: #353535;
   }
   svg {
     width: 40px;

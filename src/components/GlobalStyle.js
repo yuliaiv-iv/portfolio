@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: #fff;
+    background: #1b1b1b;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;      
   }
@@ -51,26 +51,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.1rem;
     color: #fff;
   }
-  /* @media screen and (max-width: 1180px) {
-    h2 {
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1.1rem;
-      padding: 1.5rem 0rem;
-    }
-    h4 {
-      font-size: 1.3rem;
-    }
-    a {
-      text-decoration: none;
-      font-size: 1rem;
-    }
-    button {
-      font-size: 1.1rem;
-      padding: 0.6rem 1rem;
-    }
-  } */
 
   @media screen and (max-width: 1090px) {
     h2 {
