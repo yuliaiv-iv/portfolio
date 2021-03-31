@@ -50,6 +50,9 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     font-size: 1.1rem;
     color: #fff;
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   @media screen and (max-width: 1090px) {
@@ -70,6 +73,14 @@ const GlobalStyle = createGlobalStyle`
     button {
       font-size: 1.1rem;
       padding: 0.6rem 1rem;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    h4 {
+      font-size: 1.1rem;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 `;

@@ -56,7 +56,7 @@ const FooterLayout = styled.footer`
     justify-content: space-between;
   }
   a {
-    padding-left: 2rem;
+    margin-left: 2rem;
   }
   @media screen and (max-width: 1180px) {
     padding: 0rem 2rem;
@@ -77,7 +77,14 @@ const FooterLayout = styled.footer`
     padding: 0rem 1rem;
   }
   a {
-    padding-left: 1rem;
+    margin-left: 1rem;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  p {
+    font-size: 0.8rem;
   }
 `;
 

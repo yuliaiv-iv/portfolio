@@ -67,6 +67,7 @@ const ContactLayout = styled(motion.div)`
 `;
 
 const Container = styled.div`
+  background: rgb(255, 255, 255);
   max-width: 1440px;
   margin: auto;
   margin-top: 80px;
@@ -89,10 +90,14 @@ const Hide = styled.div`
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;
+  padding-bottom: 1rem;
+  &:hover {
+    opacity: 0.6;
+  }
   h4 {
-    margin: 1rem;
     font-weight: normal;
     color: #353535;
+    padding-left: 1rem;
   }
   svg {
     width: 40px;
@@ -103,6 +108,15 @@ const Social = styled(motion.div)`
   }
   .hhru {
     fill: #ffffff;
+  }
+  @media screen and (max-width: 500px) {
+    h4 {
+      font-size: 1rem;
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+  }
   }
 `;
 

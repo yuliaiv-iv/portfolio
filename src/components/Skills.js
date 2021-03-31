@@ -83,7 +83,13 @@ const Card = styled.div`
       width: 35px;
     }
   }
+  @media screen and (max-width: 500px) {
+    h3 {
+      padding: 0.3rem;
+      margin-left: 0.8rem;
+    }
   }
+}
 `;
 
 export default Skills;

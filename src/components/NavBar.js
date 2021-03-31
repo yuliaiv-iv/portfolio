@@ -45,8 +45,9 @@ function NavBar() {
               animate={isOpen ? 'show' : 'hidden'}
             >
               {navigation.map(({ text, url }) =>
-                <li onClick={handleClick} key={text}>
+                <li key={text}>
                   <NavLink
+                    onClick={handleClick}
                     exact to={url}
                     activeClassName='active'
                   >
@@ -130,6 +131,7 @@ const Header = styled.header`
     height: 0.3rem;
     border-bottom: solid 3px #23d997;
     padding-bottom: 5px;
+    opacity: 1;
   }
   @media screen and (max-width: 1180px) {
     .container {
@@ -163,6 +165,9 @@ const Header = styled.header`
   @media screen and (max-width: 500px) {
     .container {
       padding: 0rem 1rem;
+    }
+    li {
+      padding: 1rem 1rem;   
     }
   }
 `;

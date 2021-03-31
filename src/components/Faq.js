@@ -47,6 +47,11 @@ const FaqLayout = styled(Layout)`
       padding: 1rem 0rem;
     }
   }
+  @media screen and (max-width: 500px) {
+    img {
+      width: 15px;
+    }
+  }
 `;
 
 export default Faq;

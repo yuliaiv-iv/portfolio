@@ -35,6 +35,9 @@ const StyledToggle = styled(motion.div)`
     display: flex;
     justify-content: space-between;
   }
+  img:hover {
+    opacity: 0.6;
+  }
 `;
 
 export default Toggle;

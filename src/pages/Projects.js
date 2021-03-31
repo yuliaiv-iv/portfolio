@@ -21,7 +21,7 @@ function Projects() {
       >
         <ScrollTop />
         {projects.map(({ title, url, mainImage }) => (
-          <Movie key={title}>
+          <Project key={title}>
             <motion.h2 variants={fade}>{title}</motion.h2>
             <motion.div
               variants={lineAnimation}
@@ -33,7 +33,7 @@ function Projects() {
                 <img src={mainImage} alt={title} />
               </Image>
             </Link>
-          </Movie>
+          </Project>
         ))}
       </Work>
       <Footer theme='#fff' />
@@ -77,7 +77,7 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Movie = styled.div`
+const Project = styled.div`
   padding-bottom: 4rem;
   .line {
     height: 0.5rem;
