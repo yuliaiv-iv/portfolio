@@ -21,7 +21,7 @@ function About() {
             <motion.h2 variants={titleAnimation}>Junior <span>web</span> developer</motion.h2>
           </Text>
         </motion.div>
-        <motion.p variants={fade}>Обучение по направлению направлению</motion.p>
+        <motion.p variants={fade}>Разработка - это динамичный и увлекательный процесс, основанный на творческом решении проблем и постоянных инновациях</motion.p>
         <Button variants={fade}>
           <a
             href={externalLinks.hh}

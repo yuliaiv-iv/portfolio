@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import menu from '../img/menu.svg';
 import closeBtn from '../img/close-btn.svg';
-import { NavAnimation, ItemsAnimation } from '../animation';
+import { NavAnimation, ItemsAnimation, ListAnimation } from '../animation';
 import { motion } from 'framer-motion';
 import { navigation } from '../utils/info';
 
@@ -46,7 +46,11 @@ function NavBar() {
               animate={isOpen ? 'show' : 'hidden'}
             >
               {navigation.map(({ text, url }) =>
-                <li key={text}>
+                <motion.li 
+                  key={text}
+                  variants={resolution ? ListAnimation : handleOpacity}
+                  animate={(resolution && isOpen) ? 'show' : 'hidden'}
+                >
                   <NavLink
                     onClick={handleClick}
                     exact to={url}
@@ -54,7 +58,7 @@ function NavBar() {
                   >
                     {text}
                   </NavLink>
-                </li>
+                </motion.li>
               )}
             </motion.ul>
           </motion.div>

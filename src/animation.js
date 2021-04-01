@@ -103,6 +103,20 @@ export const ItemsAnimation = {
   }
 };
 
+export const ListAnimation = {
+  hidden: {
+    height: '0%',
+    opacity: 0,
+    transition: { 
+      duration: 0.1,
+    },
+  },
+  show: {
+    height: '60px',
+    opacity: 1,
+  }
+};
+
 export const reveal = {
   hidden: { opacity: 0, scale: 0.9 },
   show: {

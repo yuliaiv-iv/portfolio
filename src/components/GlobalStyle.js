@@ -22,8 +22,7 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     transition: all 0.5s ease;
     &:hover {
-      background: #23d997;
-      color: white;
+      opacity: 0.6;
     }
   }
   h2 {
