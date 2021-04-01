@@ -31,8 +31,9 @@ const Contact = () => {
             href={link}
             target='_blank'
             rel="noreferrer"
+            key={text}
           >
-            <Hide key={text}>
+            <Hide>
               <Social variants={titleAnimation}>
                 <div>{icon}</div>
                 <h4>{text}</h4>

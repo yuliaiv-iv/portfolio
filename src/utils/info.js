@@ -26,7 +26,7 @@ export const info = [
 export const contacts = [
   {
     icon: <Hh />,
-    text: 'Обучение по направлению',
+    text: 'Обучение по направлен',
     link: 'https://hh.ru/applicant/resumes/view?resume=800795d9ff088ce4400039ed1f4a4e45587561'
   },
   {

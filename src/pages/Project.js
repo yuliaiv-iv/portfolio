@@ -35,7 +35,6 @@ function Movie() {
             <Image className='image'>
               <motion.img
                 variants={imageAnimation}
-                exit='exit'
                 initial='hidden'
                 animate='show'
                 src={project.image}
@@ -113,7 +112,7 @@ const HeadLine = styled.div`
   }
 `;
 
-const ProjectList = styled.div`
+const ProjectList = styled(motion.div)`
   max-width: 1440px;
   margin: auto;
   align-items: center;

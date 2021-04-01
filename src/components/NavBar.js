@@ -41,6 +41,7 @@ function NavBar() {
             animate={(resolution && isOpen) ? 'show' : 'hidden'}
           >
             <motion.ul
+              style={{ height: 'max-content' }}
               variants={resolution ? ItemsAnimation : handleOpacity}
               animate={isOpen ? 'show' : 'hidden'}
             >
@@ -106,6 +107,9 @@ const Header = styled.header`
   img {
     vertical-align: bottom;
     box-sizing: none;
+    &:hover {
+      opacity: 0.6;
+    }
   }
   ul {
     display: flex;

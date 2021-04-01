@@ -39,13 +39,13 @@ const FooterLayout = styled.footer`
   }
   p {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #545454;
     padding: 0;
   }
   svg {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
   }
   path {
@@ -72,19 +72,19 @@ const FooterLayout = styled.footer`
     .container {
       padding: 1rem 0rem;
     }
+    a {
+      margin-left: 1rem;
+    }
   }
   @media screen and (max-width: 500px) {
     padding: 0rem 1rem;
-  }
-  a {
-    margin-left: 1rem;
-  }
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-  p {
-    font-size: 0.8rem;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+    p {
+      font-size: 0.8rem;
+    }
   }
 `;
 

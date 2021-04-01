@@ -91,12 +91,14 @@ export const NavAnimation = {
 
 export const ItemsAnimation = {
   hidden: {
+    height: '0%',
     opacity: 0,
     transition: { 
       duration: 0.1,
     },
   },
   show: {
+    height: '100%',
     opacity: 1,
   }
 };
